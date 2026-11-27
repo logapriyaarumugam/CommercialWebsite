@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoNest - Product Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>EcoNest</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="account.html">Account</a>
+    </nav>
+</header>
+
+<section class="product-page">
+    <div class="details">
+        <h2>Product Details</h2>
+        <h3 id="name"></h3>
+        <p>Thank you for choosing our eco-friendly products.</p>
+        <h3 id="price"></h3>
+        <button onclick="alert('Thank you for choosing EcoNest!')">
+            Confirm Product
+        </button>
+        <br><br>
+        <a href="products.html" class="btn">Back to Products</a>
+    </div>
+</section>
+
+<footer>
+    <h3>EcoNest</h3>
+    <p>© 2026 EcoNest. All Rights Reserved.</p>
+</footer>
+
+<script>
+    const products = {
+        "Bamboo Toothbrush": "₹149",
+        "Printed Tote Bag": "₹299",
+        "Desk Organizer": "₹399",
+        "Glass Water Bottle": "₹349",
+        "Scented Candles": "₹249",
+        "Reusable Lunch Box": "₹499"
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const item = params.get("item");
+
+    document.getElementById("name").textContent =
+        item || "Product Not Found";
+
+    document.getElementById("price").textContent =
+        products[item] || "";
+</script>
+
+</body>
+</html>
